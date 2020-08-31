@@ -15,6 +15,7 @@ git clone https://github.com/mr-n30/parse-nmap-xml.git \
 ```
 ## Example output:
 ```bash
+# ./parse-nmap-xml.py --file nmap-scan.xml
 ...
 http://localhost:22/
 http://localhost:80/
