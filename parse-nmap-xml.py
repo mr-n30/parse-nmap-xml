@@ -1,8 +1,16 @@
 #!/usr/bin/env python3 
 import sys
+import argparse
 import xml.etree.ElementTree as ET
 
-tree = ET.parse(sys.argv[1])
+# argparse
+parser = argparse.ArgumentParser(description="Parse an Nmap XML file and print: Protocol + Hostname + Port")
+parser.add_argument("-f", "--file", type=str, help="Nmap XML scan file", required=True)
+args = parser.parse_args()
+
+# Parse command line arguments
+in_file = args.file
+tree = ET.parse(in_file)
 root = tree.getroot()
 
 #print(root[3].attrib['task'])
